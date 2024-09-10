@@ -1,0 +1,583 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Smooth scrolling animation */
+html {
+    scroll-behavior: smooth;
+}
+/* Neon Animation Keyframes */
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+    }
+}
+
+/* Fade-in Effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation Styles */
+nav {
+    background: #111;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px #ff00ff;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    color: #fff;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+nav ul li a:hover {
+    background: #ff00ff;
+    border-radius: 5px;
+}
+
+/* Header Section */
+header {
+    background: url('your-image-url.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    animation: fadeInUp 2s ease;
+}
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+header .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #ff00ff;
+}
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+header p {
+    font-size: 1.5em;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+    background-color: #000;
+    transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* About Me Section */
+.about {
+    background: #111;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* About Me Content */
+.about .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    animation: slideIn 2s ease-out;
+}
+
+.about img {
+    border-radius: 50%;
+    width: 250px; /* Adjusted for consistency */
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    animation: bounce 2s infinite;
+}
+
+.about .text {
+    max-width: 600px;
+    text-align: left;
+    margin: auto;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff00ff;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.resume-btn:hover {
+    background: #ff33ff;
+}
+
+/* Keyframes for Animations */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+/* Skills Section */
+.skills {
+    padding: 60px 0;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ff00ff;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.skills-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between skill circles */
+    width: 70%; /* Adjust as needed */
+}
+
+.skill {
+    width: 100px; /* Decreased size */
+    height: 100px; /* Decreased size */
+    position: relative;
+}
+
+.skill svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.skill circle {
+    fill: none;
+    stroke-width: 8; /* Adjusted width for smaller circles */
+    stroke: #333;
+}
+
+.skill .progress {
+    stroke-linecap: round;
+    stroke-dasharray: 439.82; /* Adjusted circumference for smaller circles */
+    stroke-dashoffset: 439.82; /* Adjusted circumference for smaller circles */
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.skill .skill-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.skill .skill-name h3 {
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.skill .skill-name p {
+    font-size: 0.8em;
+}
+
+/* Skill Colors */
+.skill-html .progress { stroke: #f06529; }
+.skill-css .progress { stroke: #2965f1; }
+.skill-js .progress { stroke: #f0db4f; }
+.skill-php .progress { stroke: #8a2f6d; }
+.skill-c .progress { stroke: #a8b9cc; }
+.skill-python .progress { stroke: #3572a5; }
+.skill-oracle .progress { stroke: #f80000; }
+.skill-java .progress { stroke: #f89820; }
+
+/* Skills Table */
+.skills-table {
+    width: 30%; /* Adjust as needed */
+}
+
+.skills-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skills-table th, .skills-table td {
+    padding: 8px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.skills-table th {
+    background-color: #222;
+    color: #ff00ff;
+}
+
+.skills-table td {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Projects Section */
+.projects h2 {
+    text-align: center;
+    font-size: 3em; /* Larger heading size */
+    margin-bottom: 50px; /* Increased space below heading */
+    color: #ff00ff;
+    animation: neon 0.0s ease-in-out infinite alternate;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* Larger gap between project boxes */
+}
+
+.project {
+    background: #111;
+    padding: 20px; /* Padding inside the box */
+    margin: 30px; /* Margin around the box */
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    box-shadow: 0 0 25px #ff00ff; /* More prominent shadow */
+    border-radius: 20px; /* More rounded corners */
+    transition: transform 0.3s, opacity 0.3s;
+    position: relative;
+    overflow: hidden; /* Ensures content does not overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content inside the box */
+}
+
+.project img {
+    width: 100%; /* Make image cover the box width */
+    height: 100%; /* Make image cover the box height */
+    object-fit: contain; /* Ensures the entire image is visible */
+    border-bottom: 4px solid #ff00ff; /* Thicker border for image */
+    border-radius: 15px; /* Rounded corners for the image */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    opacity: 0.9; /* Adjusted opacity on hover */
+}
+
+.project .description {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Darker background for better contrast */
+    color: #fff;
+    padding: 20px; /* Padding inside the description */
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows scrolling if content is too long */
+    text-align: center; /* Center-align text */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px; /* Rounded corners for description box */
+}
+
+.project.active .description {
+    display: block;
+    opacity: 1; /* Make description fully visible when active */
+}
+
+/* Contact */
+.contact {
+    background: #111;
+    color: #fff;
+    text-align: center;
+}
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff00ff68;
+    animation: neon 0.0s ease-in-out infinite alternate;
+}
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 5px;
+}
+.contact form input,
+.contact form textarea {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+}
+.contact form button {
+    padding: 10px 20px;
+    background: #ff00ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.contact form button:hover {
+    background: #ff33ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Add this CSS for smooth transition effect */
+.skill .progress {
+    stroke: #ff00ff;
+    stroke-linecap: round;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: stroke-dashoffset 1.5s ease;
+}
+/* Adjust the SVG container and circle size */
+.skill {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.skill svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Rotate the SVG to start from the top */
+}
+
+.skill circle {
+    fill: none;
+    stroke-width: 15;
+}
+
+.skill .progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.5s ease;
+}
+/* Home Section */
+header {
+    background: url('your-background-image-url.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    animation: fadeIn 2s ease;
+}
+
+/* Blending the Image with Background */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity to blend */
+    z-index: 1;
+}
+
+/* Content Styling */
+header .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    animation: slideIn 2s ease;
+}
+
+/* Image Styling */
+header img {
+    border-radius: 50%;
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+    object-fit: cover;
+    border: 5px solid #ff00ff; /* Adding border */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6); /* Adding shadow for blend effect */
+    animation: bounce 2s ease infinite;
+}
+
+/* Text Styling */
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+header p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 0, 255, 1);
+    }
+}
+
